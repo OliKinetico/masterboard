@@ -31,3 +31,13 @@ Numbered log of every judgement call made while building unattended. Each entry:
 14. **`registration_required` default**: computed as `lease_length_years > 7` in the property form (UK Land Registry threshold), editable per spec.
 
 15. **Pipedrive column mapping** assumes the existing Pipedrive pipeline uses the same ten stage names (case/spacing-insensitive: "Active Discussions" → `active_discussions`, "HoTs" → `hots`, etc.). Unmappable stage names land in the dry-run report as `needs-review` and default to `identified` on commit. *If wrong:* edit the `STAGE_MAP` in `src/lib/pipedrive/mapper.ts`.
+
+16. **deal_lead can also write clinics, contacts and clinic_aliases.** Spec §4.11 lists deal_lead writes as "deals/interactions/documents/checklists/tasks/offers/properties", but day-to-day flows the spec demands (quick-add a clinic, "add sender as contact" in the Unmatched Inbox, imports) all require contact/clinic writes by the person doing deal work. Admin-only would bottleneck on Oli. *If wrong:* tighten `clinics_write`/`contacts_write`/`clinic_aliases_write` policies in `0009_rls.sql` to `is_admin()`.
+
+17. **Added `contacts.pipedrive_person_id` and `deals.pipedrive_deal_id` (migration 0014).** Spec §1.5 requires external IDs as unique upsert keys; §4 didn't define columns for Pipedrive entity ids (orgs reuse `clinics.platform_clinic_id` with a `pd-org-` prefix). *If wrong:* the columns are nullable and ignorable.
+
+18. **Added `whatsapp` to the `sync_runs.source` enum (migration 0013).** §4.12 lists four sources, but §1.5 says *every* import produces a persisted reconciliation count — WhatsApp imports now write one too.
+
+19. **Viewers see clinics/contacts only through their granted deals.** Spec says viewers read "deals granted … and their child rows"; clinics/contacts are master data, not child rows, so the conservative reading is enforced: a viewer sees a clinic only if it sits on a granted deal, and contacts only at those clinics. Config tables (column settings, templates, aliases) are readable by all authenticated users — they leak no deal data.
+
+20. **Ambiguous Pipedrive orgs are skipped on commit** (with their persons/deals) rather than guessed at — the dry-run report tells the operator to resolve and re-run. Conservative by design for a data-merge.

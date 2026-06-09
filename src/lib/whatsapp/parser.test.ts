@@ -5,7 +5,7 @@ import { parseWhatsAppExport, dayTranscript, daySummary } from "./parser";
 import { whatsappDayRef } from "./hash";
 
 const fixture = (name: string) =>
-  readFileSync(path.join(process.cwd(), "fixtures", "whatsapp", name), "utf8");
+  readFileSync(path.join(process.cwd(), "public", "fixtures", "whatsapp", name), "utf8");
 
 describe("WhatsApp parser — Android export (Sarah / flagship round-trip)", () => {
   const result = parseWhatsAppExport(fixture("android-sarah.txt"));
