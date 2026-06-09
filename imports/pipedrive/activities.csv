@@ -1,0 +1,5 @@
+id,deal_id,type,subject,note,due_date,done
+9201,7002,call,Intro call with Helen Drew,Good first chat — revenue ~£650k,2026-02-20,1
+9202,7002,meeting,Site visit Southampton,Tour both Lakeside sites,2026-04-18,0
+9203,7003,email,Send acquisition criteria,Sent the one-pager and case study,2026-03-03,1
+9204,7001,call,Debrief call,Post-mortem on losing the deal,2025-10-02,1
