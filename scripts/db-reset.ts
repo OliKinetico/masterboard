@@ -15,8 +15,8 @@ import postgres from "postgres";
 import { config as dotenv } from "dotenv";
 import { seed } from "./seed/index";
 
-dotenv({ path: ".env.local" });
-dotenv({ path: ".env" });
+dotenv({ path: ".env.local", quiet: true });
+dotenv({ path: ".env", quiet: true });
 
 export const DATABASE_URL =
   process.env.DATABASE_URL ??
