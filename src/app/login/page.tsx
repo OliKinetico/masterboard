@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Activity } from "lucide-react";
 import { LoginForm } from "./login-form";
 
@@ -18,7 +19,9 @@ export default function LoginPage() {
             </p>
           </div>
         </div>
-        <LoginForm />
+        <Suspense>
+          <LoginForm />
+        </Suspense>
         <div className="mt-6 rounded-lg border bg-card p-4 text-xs text-muted-foreground">
           <p className="mb-2 font-medium text-foreground">Demo logins</p>
           <ul className="space-y-1 font-mono">
