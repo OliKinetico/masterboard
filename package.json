@@ -11,7 +11,8 @@
     "test": "vitest run",
     "db:reset": "tsx scripts/db-reset.ts",
     "seed": "tsx scripts/db-reset.ts --seed-only",
-    "check:rls": "tsx scripts/check-rls.ts"
+    "check:rls": "tsx scripts/check-rls.ts",
+    "smoke:staging": "tsx scripts/smoke-staging.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
