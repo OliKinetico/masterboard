@@ -33,7 +33,12 @@ create table if not exists auth.users (
   raw_app_meta_data jsonb,
   raw_user_meta_data jsonb,
   created_at timestamptz default now(),
-  updated_at timestamptz default now()
+  updated_at timestamptz default now(),
+  -- GoTrue token columns (referenced by supabase/staging_setup.sql)
+  confirmation_token text default '',
+  recovery_token text default '',
+  email_change text default '',
+  email_change_token_new text default ''
 );
 
 create table if not exists auth.identities (
