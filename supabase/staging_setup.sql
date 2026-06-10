@@ -1271,7 +1271,6 @@ set session_replication_role = replica;
 -- PostgreSQL database dump
 --
 
-\restrict SSXIl5qMaTpiy4EjVC5d3gnkbYMfZ5afbycAAaeHqFiYePuBM1P5rO1wFzV7Dul
 
 -- Dumped from database version 16.13 (Ubuntu 16.13-0ubuntu0.24.04.1)
 -- Dumped by pg_dump version 16.13 (Ubuntu 16.13-0ubuntu0.24.04.1)
@@ -2106,7 +2105,6 @@ INSERT INTO public.user_profiles VALUES
 -- PostgreSQL database dump complete
 --
 
-\unrestrict SSXIl5qMaTpiy4EjVC5d3gnkbYMfZ5afbycAAaeHqFiYePuBM1P5rO1wFzV7Dul
 
 
 set session_replication_role = default;
