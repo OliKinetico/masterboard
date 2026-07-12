@@ -28,8 +28,7 @@ export function Topbar({ profile }: { profile: UserProfile }) {
   }
 
   return (
-    <header className="sticky top-0 z-20 flex h-14 items-center gap-2 border-b bg-card/80 px-4 backdrop-blur lg:px-6">
-      <div className="w-8 lg:hidden" />
+    <header className="sticky top-0 z-20 flex h-14 items-center gap-2 border-b bg-card/80 px-4 backdrop-blur md:px-6">
       <button
         onClick={() => openPalette()}
         className="flex h-9 flex-1 max-w-md items-center gap-2 rounded-md border bg-background px-3 text-sm text-muted-foreground transition-colors hover:bg-slate-100 cursor-pointer"

@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { getCurrentProfile } from "@/lib/auth";
 import { Sidebar } from "@/components/shell/sidebar";
+import { BottomNav } from "@/components/shell/bottom-nav";
 import { Topbar } from "@/components/shell/topbar";
 import { CommandPalette } from "@/components/shell/command-palette";
 import { QuickLog } from "@/components/shell/quick-log";
@@ -37,10 +38,17 @@ export default async function AppLayout({
           reengageCount={reengageCount ?? 0}
           unmatchedCount={unmatchedCount ?? 0}
         />
-        <div className="flex min-w-0 flex-1 flex-col lg:pl-56">
+        <div className="flex min-w-0 flex-1 flex-col md:pl-56">
           <Topbar profile={profile} />
-          <main className="flex-1 px-4 py-5 lg:px-6">{children}</main>
+          <main className="flex-1 px-4 pt-5 pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:px-6 md:py-5">
+            {children}
+          </main>
         </div>
+        <BottomNav
+          profile={profile}
+          reengageCount={reengageCount ?? 0}
+          unmatchedCount={unmatchedCount ?? 0}
+        />
       </div>
       <CommandPalette />
       <QuickLog />

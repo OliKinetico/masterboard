@@ -90,6 +90,20 @@ body {
   animation: enter 0.15s ease-out;
 }
 
+/* Mobile bottom sheet (e.g. the bottom-nav "More" menu) */
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-sheet-up {
+  animation: sheet-up 0.22s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 ::selection {
   background: var(--color-brand-200);
 }
