@@ -5,7 +5,7 @@
 -- Does everything in one pass:
 --   1. resets the public schema
 --   2. applies migrations 0001–0014
---   3. creates the four demo logins (password: KineticoDemo1!)
+--   3. creates the four demo logins (password: REDACTED-ROTATE-BEFORE-USE)
 --   4. loads the full deterministic seed (80 clinics, 31 deals, …) with
 --      triggers paused so history/checklists/legal packs aren't duplicated
 --      (the seed data already contains the trigger outputs)
@@ -1235,16 +1235,16 @@ create policy merge_log_select on public.merge_log
 create policy merge_log_write on public.merge_log
   for all to authenticated using (public.is_admin()) with check (public.is_admin());
 
--- 3 ── demo logins (GoTrue-compatible inserts; password KineticoDemo1!) ------
+-- 3 ── demo logins (GoTrue-compatible inserts; password REDACTED-ROTATE-BEFORE-USE) ------
 insert into auth.users (
   instance_id, id, aud, role, email, encrypted_password, email_confirmed_at,
   raw_app_meta_data, raw_user_meta_data, created_at, updated_at,
   confirmation_token, recovery_token, email_change, email_change_token_new
 ) values
-  ('00000000-0000-0000-0000-000000000000','54786622-76b3-4642-aeef-d73aaba847c8','authenticated','authenticated','admin@kinetico.test',  crypt('KineticoDemo1!', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', ''),
-  ('00000000-0000-0000-0000-000000000000','19fca03c-771e-4ac8-ba7d-2108e7c73832','authenticated','authenticated','lead@kinetico.test',   crypt('KineticoDemo1!', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', ''),
-  ('00000000-0000-0000-0000-000000000000','4317c135-902c-484e-8527-f4e0846df578','authenticated','authenticated','exec@kinetico.test',   crypt('KineticoDemo1!', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', ''),
-  ('00000000-0000-0000-0000-000000000000','9949d473-c565-45b2-94f7-982765c53ec5','authenticated','authenticated','viewer@kinetico.test', crypt('KineticoDemo1!', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', '')
+  ('00000000-0000-0000-0000-000000000000','54786622-76b3-4642-aeef-d73aaba847c8','authenticated','authenticated','admin@kinetico.test',  crypt('REDACTED-ROTATE-BEFORE-USE', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', ''),
+  ('00000000-0000-0000-0000-000000000000','19fca03c-771e-4ac8-ba7d-2108e7c73832','authenticated','authenticated','lead@kinetico.test',   crypt('REDACTED-ROTATE-BEFORE-USE', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', ''),
+  ('00000000-0000-0000-0000-000000000000','4317c135-902c-484e-8527-f4e0846df578','authenticated','authenticated','exec@kinetico.test',   crypt('REDACTED-ROTATE-BEFORE-USE', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', ''),
+  ('00000000-0000-0000-0000-000000000000','9949d473-c565-45b2-94f7-982765c53ec5','authenticated','authenticated','viewer@kinetico.test', crypt('REDACTED-ROTATE-BEFORE-USE', gen_salt('bf')), now(), '{"provider":"email","providers":["email"]}'::jsonb,'{}'::jsonb, now(), now(), '', '', '', '')
 on conflict (id) do nothing;
 
 insert into auth.identities (id, user_id, identity_data, provider, provider_id, last_sign_in_at, created_at, updated_at)

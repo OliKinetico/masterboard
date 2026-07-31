@@ -38,7 +38,7 @@ async function main() {
 
   const { data: auth, error: authError } = await supabase.auth.signInWithPassword({
     email: "admin@kinetico.test",
-    password: "KineticoDemo1!",
+    password: "REDACTED-ROTATE-BEFORE-USE",
   });
   check("admin@kinetico.test signs in", !!auth?.user && !authError, authError?.message);
   if (!auth?.user) process.exit(1);
@@ -88,7 +88,7 @@ async function main() {
   const viewer = createClient(url, anonKey);
   const { data: viewerAuth } = await viewer.auth.signInWithPassword({
     email: "viewer@kinetico.test",
-    password: "KineticoDemo1!",
+    password: "REDACTED-ROTATE-BEFORE-USE",
   });
   if (viewerAuth?.user) {
     const { count: viewerDeals } = await viewer

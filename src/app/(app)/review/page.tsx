@@ -141,7 +141,7 @@ export default async function ReviewPage() {
         "viewer@kinetico.test → sees exactly 2 deals (Riverside + Harborne); no quick-add, no edits anywhere.",
         "exec@kinetico.test → reads everything, and the ONLY thing they can write is a Comment on a deal.",
         "lead@kinetico.test → full deal work but no Admin in the nav (and RLS blocks admin writes server-side).",
-        "All passwords: KineticoDemo1!",
+        "All passwords: REDACTED-ROTATE-BEFORE-USE",
       ],
     },
     {

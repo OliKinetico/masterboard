@@ -1,7 +1,7 @@
 import type { Sql } from "postgres";
 import { did } from "./helpers";
 
-export const DEMO_PASSWORD = "KineticoDemo1!";
+export const DEMO_PASSWORD = "REDACTED-ROTATE-BEFORE-USE";
 
 export const USERS = {
   admin: { id: did("user:admin"), email: "admin@kinetico.test", name: "Oli (Director of M&A)", role: "admin" },

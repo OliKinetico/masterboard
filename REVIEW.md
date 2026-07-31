@@ -2,7 +2,7 @@
 
 **What this is:** the complete Kinetico M&A CRM per the build spec — pipeline kanban, deal workhorse page, unified timeline, WhatsApp import, Outlook sync engine, legal tracker + cross-deal board, checklists, offers/properties, analytics, imports (clinic/Pipedrive/Companies House), full Admin, role-based access — seeded with a realistic anonymised dataset and a fully-worked flagship deal (**Riverside Physio Group**, multi-site, in HoTs with a spawned legal pack).
 
-**Where to start:** log in as `admin@kinetico.test` / `KineticoDemo1!` and open **/review** — a guided, deep-linked walkthrough of every module.
+**Where to start:** log in as `admin@kinetico.test` / `REDACTED-ROTATE-BEFORE-USE` and open **/review** — a guided, deep-linked walkthrough of every module.
 
 ---
 

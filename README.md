@@ -40,7 +40,7 @@ DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/postgres npm run db:res
 npm run dev      # http://localhost:3000
 ```
 
-### Seeded logins (all passwords: `KineticoDemo1!`)
+### Seeded logins (all passwords: `REDACTED-ROTATE-BEFORE-USE`)
 
 | Email | Role | What you'll see |
 |---|---|---|

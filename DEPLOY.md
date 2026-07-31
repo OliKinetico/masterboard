@@ -96,7 +96,7 @@ create it empty on github.com → then
 ### B4. Smoke test
 
 - Open the Vercel URL → you're redirected to `/login`.
-- Sign in `admin@kinetico.test` / `KineticoDemo1!` → the **Pipeline** board
+- Sign in `admin@kinetico.test` / `REDACTED-ROTATE-BEFORE-USE` → the **Pipeline** board
   loads. Set the owner filter to "All owners" to see all 31 seeded deals
   across the ten columns (the default view is "My deals" = the admin's own).
 - Scripted equivalent: `npm run smoke:staging -- https://<your-app>.vercel.app`

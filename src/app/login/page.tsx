@@ -31,7 +31,7 @@ export default function LoginPage() {
             <li>viewer@kinetico.test — viewer (2 deals)</li>
           </ul>
           <p className="mt-2">
-            Password for all: <span className="font-mono">KineticoDemo1!</span>
+            Password for all: <span className="font-mono">REDACTED-ROTATE-BEFORE-USE</span>
           </p>
         </div>
       </div>
